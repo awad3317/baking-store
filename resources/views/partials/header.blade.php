@@ -15,6 +15,8 @@
                 href="{{ route('home') }}">الرئيسية</a>
             <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
                 href="{{ route('shop') }}">المتجر</a>
+            <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
+                href="{{ route('recipes') }}">الوصفات</a>
             <a class="text-sm font-medium text-warm-brown hover:text-primary dark:text-gray-200" href="#">من نحن</a>
             <a class="text-sm font-medium text-warm-brown hover:text-primary dark:text-gray-200" href="#">تواصل معنا</a>
         </nav>

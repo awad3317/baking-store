@@ -45,3 +45,7 @@ Route::get('/shop', function () {
     return view('shop');
 })->name('shop');
 
+Route::get('/recipes', function () {
+    return view('recipes');
+})->name('recipes');
+
