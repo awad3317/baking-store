@@ -49,3 +49,6 @@ Route::get('/recipes', function () {
     return view('recipes');
 })->name('recipes');
 
+Route::get('/recipe-details', function () {
+    return view('recipe-details');
+})->name('recipe.details');
