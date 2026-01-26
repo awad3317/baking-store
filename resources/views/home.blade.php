@@ -58,7 +58,7 @@
     </section>
 
     {{-- Categories Filter --}}
-    <section class="sticky top-[73px] z-30 mx-auto max-w-7xl border-b border-[#f0ebed] bg-background-light/95 px-4 py-4 backdrop-blur-sm md:px-6 dark:bg-background-dark/95 dark:border-[#3a2d32]">
+    <section class="sticky top-[85px] z-30 mx-auto max-w-7xl border-b border-[#f0ebed] bg-background-light/95 px-4 pt-2 py-4 backdrop-blur-sm md:px-6 dark:bg-background-dark/95 dark:border-[#3a2d32]">
         <div class="no-scrollbar flex gap-3 overflow-x-auto">
             <button class="shrink-0 rounded-full bg-warm-brown px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-primary">الكل</button>
             @foreach(['القوالب', 'الكريمات والحشوات', 'أدوات', 'فن الطعام', 'التغليف'] as $category)

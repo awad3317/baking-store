@@ -144,6 +144,9 @@
         {{-- Floating Cart Drawer --}}
         @include('partials.cart-drawer')
 
+        {{-- Product Details Modal --}}
+        @include('partials.product-modal')
+
         {{-- Header --}}
         @include('partials.header')
 
