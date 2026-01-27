@@ -1,4 +1,4 @@
-<header
+<header x-data="{ mobileMenuOpen: false }" @click.outside="mobileMenuOpen = false"
     class="sticky top-0 z-40 w-full border-b border-[#f0ebed] bg-white/95 px-6 py-4 backdrop-blur-md dark:bg-[#1a0f12]/95 dark:border-[#3a2d32]">
     <div class="mx-auto flex max-w-7xl items-center justify-between">
         {{-- Logo --}}
@@ -23,28 +23,34 @@
 
         {{-- Actions --}}
         <div class="flex items-center gap-4">
-            {{-- Search (Desktop) --}}
-            <div class="hidden md:flex">
-                <label
-                    class="relative flex h-10 w-64 items-center overflow-hidden rounded-lg bg-background-light dark:bg-[#2f1f24]">
-                    <span class="material-symbols-outlined absolute right-3 text-[20px] text-dusty-dark">search</span>
-                    <input
-                        class="h-full w-full border-none bg-transparent pr-10 pl-4 text-sm text-warm-brown placeholder-dusty-dark focus:ring-0 dark:text-white"
-                        placeholder="بحث عن منتج..." type="text" />
-                </label>
-            </div>
-
-            {{-- Search (Mobile) --}}
-            <button
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-warm-brown md:hidden dark:bg-[#2f1f24] dark:text-white">
-                <span class="material-symbols-outlined">search</span>
-            </button>
-
             {{-- User Profile --}}
             <button
                 class="flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-warm-brown transition-colors hover:bg-primary/10 hover:text-primary dark:bg-[#2f1f24] dark:text-white">
                 <span class="material-symbols-outlined">person</span>
             </button>
+
+            {{-- Mobile Menu Button --}}
+            <button @click="mobileMenuOpen = !mobileMenuOpen"
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-warm-brown transition-colors hover:bg-primary/10 hover:text-primary md:hidden dark:bg-[#2f1f24] dark:text-white">
+                <span x-show="!mobileMenuOpen" class="material-symbols-outlined">menu</span>
+                <span x-show="mobileMenuOpen" x-cloak class="material-symbols-outlined">close</span>
+            </button>
         </div>
+    </div>
+
+    {{-- Mobile Menu Drawer --}}
+    <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        class="absolute left-0 top-full z-50 flex w-full flex-col gap-4 border-b border-gray-100 bg-white/95 px-6 py-4 shadow-lg backdrop-blur-md md:hidden dark:bg-[#1a0f12]/95 dark:border-[#3a2d32]"
+        style="display: none;">
+        <a class="text-sm font-medium {{ request()->routeIs('home') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
+            href="{{ route('home') }}">الرئيسية</a>
+        <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
+            href="{{ route('shop') }}">المتجر</a>
+        <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
+            href="{{ route('recipes') }}">الوصفات</a>
+        <a class="text-sm font-medium text-warm-brown hover:text-primary dark:text-gray-200" href="#">تواصل معنا</a>
     </div>
 </header>
