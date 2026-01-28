@@ -68,7 +68,7 @@
         <div class="mt-auto flex items-end justify-between">
             <div class="flex flex-col">
                 @if($oldPrice)
-                    <span class="text-xs text-gray-400 line-through">{{ $oldPrice }}</span>
+                    <span class="text-xs text-gray-400 line-through">{{ $oldPrice }} {{ $currency }}</span>
                 @endif
                 <span class="text-base font-bold {{ $isSoldOut ? 'text-gray-400' : 'text-dusty-rose' }}">{{ $price }} {{ $currency }}</span>
             </div>

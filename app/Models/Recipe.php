@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Recipe extends Model
 {
@@ -14,6 +15,22 @@ class Recipe extends Model
     protected $casts = [
         'is_recipe_of_the_week' => 'boolean',
     ];
+
+    /**
+     * إرجاع مستوى الصعوبة باللغة العربية
+     * الاستخدام: $recipe->difficulty_label
+     */
+    protected function difficultyLabel(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => match ($this->difficulty) {
+                'easy'   => 'سهلة',
+                'medium' => 'متوسطة',
+                'hard'   => 'صعبة',
+                default  => $this->difficulty, 
+            }
+        );
+    }
 
     public function category()
     {

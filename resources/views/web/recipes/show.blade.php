@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('web.layouts.app')
 
 @section('content')
     <style>
@@ -41,8 +41,7 @@
     </style>
 
     <main class="flex-1">
-        <section
-            class="relative h-[75vh] min-h-[500px] w-full overflow-hidden flex items-end pb-12 md:items-center md:pb-0">
+        <section class="relative h-[75vh] min-h-[500px] w-full overflow-hidden flex items-end pb-12 md:items-center md:pb-0">
             <div class="absolute inset-0">
                 <div class="h-full w-full bg-cover bg-center animate-ken-burns"
                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5bp7F2WFWSSoT12FFVu7Yiw1y8D96emqChjbq-vzeitJrIfbzWPn90zFsUCy9dysc-N_FkH5BmbzrLxCvcbAkrtOYGFTWttn626LT6g6AVZVFvNwerYkH8em7aIrLx7alGPbZVnhv3D9cNX0E2EcJ65p-5oM8bQh5cCiVc1UtAwSiCe8EbwwjR5JGNEPI4eWWcH09UpslXt3HD5dHfWVf_fFduhFQmjQXdUhNMa-8DB5orkVgnYvO6rbi45g1iFLbT0mhmO1OnVd');">
@@ -299,7 +298,8 @@
                                 </div>
                                 <h3 class="relative z-10 text-xl font-bold text-warm-brown dark:text-white mb-1">بكج
                                     "اصنعيها بنفسك"</h3>
-                                <p class="relative z-10 text-xs text-dusty-dark font-medium mb-6">كل الأدوات الاحترافية لهذه
+                                <p class="relative z-10 text-xs text-dusty-dark font-medium mb-6">كل الأدوات الاحترافية
+                                    لهذه
                                     الوصفة في صندوق واحد</p>
                                 <div
                                     class="relative z-10 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
@@ -504,7 +504,8 @@
                             <span class="material-symbols-outlined text-lg fill-current">star</span>
                             <span class="material-symbols-outlined text-lg fill-current">star</span>
                         </div>
-                        <p class="text-warm-brown dark:text-gray-200 text-lg font-medium mb-6 leading-relaxed">"أول مرة أجرب
+                        <p class="text-warm-brown dark:text-gray-200 text-lg font-medium mb-6 leading-relaxed">"أول مرة
+                            أجرب
                             قوالب السيليكون الهندسية، النتيجة كانت مبهرة! البكج وفر علي وقت البحث عن الأدوات، والذهب عطى
                             الكيكة فخامة مو طبيعية."</p>
                         <div class="flex items-center gap-4 border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -526,7 +527,8 @@
                             <span class="material-symbols-outlined text-lg fill-current">star</span>
                             <span class="material-symbols-outlined text-lg fill-current">star_half</span>
                         </div>
-                        <p class="text-warm-brown dark:text-gray-200 text-lg font-medium mb-6 leading-relaxed">"الوصفة دقيقة
+                        <p class="text-warm-brown dark:text-gray-200 text-lg font-medium mb-6 leading-relaxed">"الوصفة
+                            دقيقة
                             جداً، والموس طلع متماسك وطعمه غني. أنصح بشراء البخاخ المخملي يعطي شكل احترافي كأنه من محل
                             مشهور."</p>
                         <div class="flex items-center gap-4 border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -629,7 +631,8 @@
                             <h3
                                 class="text-lg font-bold text-warm-brown dark:text-white mb-2 group-hover:text-primary transition-colors">
                                 تارت الشوكولاتة والكراميل</h3>
-                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-4">تارت فاخر بطبقات من كراميل
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-4">تارت فاخر بطبقات من
+                                كراميل
                                 المملح وجناش الشوكولاتة الداكنة.</p>
                             <button class="text-sm font-bold text-primary flex items-center gap-1 group/btn">
                                 عرض الوصفة

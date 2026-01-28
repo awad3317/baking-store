@@ -40,7 +40,12 @@
                         "display": ["Cairo", "sans-serif"],
                         "body": ["Cairo", "sans-serif"],
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                     animation: {
                         'shimmer': 'shimmer 2s infinite linear',
                         'ken-burns': 'ken-burns 20s ease-out infinite alternate',
@@ -52,28 +57,54 @@
                     },
                     keyframes: {
                         shimmer: {
-                            '0%': { backgroundPosition: '-200% 0' },
-                            '100%': { backgroundPosition: '200% 0' },
+                            '0%': {
+                                backgroundPosition: '-200% 0'
+                            },
+                            '100%': {
+                                backgroundPosition: '200% 0'
+                            },
                         },
                         'ken-burns': {
-                            '0%': { transform: 'scale(1)' },
-                            '100%': { transform: 'scale(1.15)' },
+                            '0%': {
+                                transform: 'scale(1)'
+                            },
+                            '100%': {
+                                transform: 'scale(1.15)'
+                            },
                         },
                         'fade-up': {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
                         },
                         'pulse-scale': {
-                            '0%, 100%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.15)' },
+                            '0%, 100%': {
+                                transform: 'scale(1)'
+                            },
+                            '50%': {
+                                transform: 'scale(1.15)'
+                            },
                         },
                         'progress': {
-                            '0%': { transform: 'scaleX(0)' },
-                            '100%': { transform: 'scaleX(1)' },
+                            '0%': {
+                                transform: 'scaleX(0)'
+                            },
+                            '100%': {
+                                transform: 'scaleX(1)'
+                            },
                         },
                         'float': {
-                            '0%, 100%': { transform: 'translateY(0) rotate(var(--tw-rotate))' },
-                            '50%': { transform: 'translateY(-10px) rotate(var(--tw-rotate))' },
+                            '0%, 100%': {
+                                transform: 'translateY(0) rotate(var(--tw-rotate))'
+                            },
+                            '50%': {
+                                transform: 'translateY(-10px) rotate(var(--tw-rotate))'
+                            },
                         }
                     }
                 },
@@ -142,13 +173,13 @@
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
         {{-- Floating Cart Drawer --}}
-        @include('partials.cart-drawer')
+        @include('web.partials.cart-drawer')
 
         {{-- Product Details Modal --}}
-        @include('partials.product-modal')
+        @include('web.partials.product-modal')
 
         {{-- Header --}}
-        @include('partials.header')
+        @include('web.partials.header')
 
         {{-- Main Content --}}
         <main class="flex-1">
@@ -156,7 +187,7 @@
         </main>
 
         {{-- Footer --}}
-        @include('partials.footer')
+        @include('web.partials.footer')
     </div>
 
     @stack('scripts')

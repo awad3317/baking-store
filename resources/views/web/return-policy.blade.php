@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('web.layouts.app')
 
 @push('styles')
     <style>
@@ -14,8 +14,7 @@
 @endpush
 
 @section('content')
-    <section
-        class="relative h-72 w-full overflow-hidden bg-pale-rose flex flex-col items-center justify-center text-center">
+    <section class="relative h-72 w-full overflow-hidden bg-pale-rose flex flex-col items-center justify-center text-center">
         <div class="absolute inset-0 opacity-[0.05] pointer-events-none">
             <span
                 class="material-symbols-outlined absolute top-4 left-10 text-6xl rotate-12 text-dusty-dark">bakery_dining</span>

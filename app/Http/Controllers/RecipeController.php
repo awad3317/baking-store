@@ -10,7 +10,7 @@ class RecipeController extends Controller
     public function index()
     {
         $recipes = Recipe::with('category')->latest()->paginate(9);
-        return view('recipes', compact('recipes'));
+        return view('web.recipes.index', compact('recipes'));
     }
 
     public function show($slug)
@@ -19,6 +19,6 @@ class RecipeController extends Controller
             ->with(['steps', 'bundle.products', 'reviews', 'category'])
             ->firstOrFail();
 
-        return view('recipe-details', compact('recipe'));
+        return view('web.recipes.show', compact('recipe'));
     }
 }

@@ -26,7 +26,7 @@ class ShopController extends Controller
         // Categories for Sidebar
         $categories = Category::withCount('products')->get();
 
-        return view('shop', compact('products', 'categories'));
+        return view('web.shop.index', compact('products', 'categories'));
     }
 
     public function show($slug)
@@ -35,6 +35,6 @@ class ShopController extends Controller
             ->with(['images', 'category', 'reviews'])
             ->firstOrFail();
 
-        return view('product-details', compact('product'));
+        return view('web.shop.show', compact('product'));
     }
 }

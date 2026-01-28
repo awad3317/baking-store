@@ -25,8 +25,8 @@ class HomeController extends Controller
         $categories = Category::take(6)->get();
 
         // 3. Latest Products (Limit 8)
-        $products = Product::with(['category','currency'])->latest()->take(5)->get();
+        $products = Product::with(['category', 'currency'])->latest()->take(5)->get();
 
-        return view('home', compact('featuredRecipe', 'categories', 'products'));
+        return view('web.home', compact('featuredRecipe', 'categories', 'products'));
     }
 }

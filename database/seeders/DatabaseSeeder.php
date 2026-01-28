@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             CurrencySeeder::class,  // 3. العملات
             CategorySeeder::class,  // 4. التصنيفات
             ProductSeeder::class,   // 5. المنتجات (تعتمد على ما سبق)
+            RecipeSeeder::class,
         ]);
        
 

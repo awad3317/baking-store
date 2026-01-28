@@ -1,124 +1,123 @@
-@extends('layouts.app')
+@extends('web.layouts.app')
 
 @section('title', 'وصفات حصرية - سويت سبلايز')
 
 @section('content')
     <main class="flex-1" x-data="{
-                search: '',
-                filters: {
-                    difficulty: '',
-                    time: '',
-                    category: ''
-                },
-                recipes: [
-                    {
-                        id: 1,
-                        title: 'تشيز كيك الفراولة البارد',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATySq5W8srPLoXBxWHWHwxS6Rse3NBixmzBs58Y_ZoMnawaSsGyrFEK7masw4nZr7I5m4VFWgol9oGC5WmRTHTZNEIjlTC8izxCbfHclaZikIyBYejFD0BdIcq1CrD-damvGm68f7_3MunTkShxkz9tJqU8bjaey6044zL4qMOWcHguPE96IWfnl3rgBowECazZQ-Ghtc29kQNMMC8DzU3F86tKlwifmHoEtCYE4tJdQuNntDY8PYcJwvyGRKMNweQtB30QbkjO9ZU',
-                        difficulty: 'medium',
-                        time: 45,
-                        servings: '8 أشخاص',
-                        category: 'cold_desserts',
-                        description: 'وصفة كلاسيكية بقوام كريمي ناعم وطبقة بسكويت مقرمشة، مزينة بصلصة الفراولة الطازجة.'
-                    },
-                    {
-                        id: 2,
-                        title: 'الماكرون الفرنسي المثالي',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDii73SFJez4obkgSgJT_6a38v900GUS7JS1pyAAC5LR4uyrWlLV3iOi6vkr6FJfExOKS3Cjc-AY66O872Kl24Wn79Vci7SSy_y0iblaNWkCXlBPH0SfKdtwh_C1MPAMkKOaEoqCm09f8U7C99OSdoh3gbhPZUhwfKt_FzD9VP4u9qtcEI7PepKwNd2Q8bLdTIcR1QvFM7kYlNn66RijKSsnbum97sLR7uRFZJI-Dn6xsalQ98E1CZHBILPVCpHQLYBaSyV0-oX67FK',
-                        difficulty: 'pro',
-                        time: 90,
-                        servings: '24 قطعة',
-                        category: 'pastries',
-                        description: 'تعلمي أسرار الماكرون الناجح، من الميرانج المتماسك إلى الحشوة الغنية (الغناش).'
-                    },
-                    {
-                        id: 3,
-                        title: 'ترافل الشوكولاتة الداكنة',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhmZYfFBBoOuWtpe23v0HXCFN_1qGKrKAh4sYaB-8OPcnPUiq5GcamG9p5B8ndW9fvcvbaydKxjqTGaYOMoxtf0gB3Db3LKGSJNbjMHuCaF-H-DzFSuz8n22ht0Cxjd02KO-BtddNuKj46xpKsFqFV00fslJwyNjZ03cXL4TCHyhwaQ19iikepTh2SrlUV7rjJ-7pRs7uOfV_WVXEjHaqEC7rJPEPDniHY33oKnWCg3HPGARYyI-yI6Om7kgZ_qpnCWTmpY8-Ircof',
-                        difficulty: 'easy',
-                        time: 30,
-                        servings: '15 قطعة',
-                        category: 'cakes',
-                        description: 'حلوى فاخرة وسريعة التحضير باستخدام حبيبات الشوكولاتة البلجيكية عالية الجودة.'
-                    },
-                    {
-                        id: 4,
-                        title: 'كيك الموس الهندسي',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5bp7F2WFWSSoT12FFVu7Yiw1y8D96emqChjbq-vzeitJrIfbzWPn90zFsUCy9dysc-N_FkH5BmbzrLxCvcbAkrtOYGFTWttn626LT6g6AVZVFvNwerYkH8em7aIrLx7alGPbZVnhv3D9cNX0E2EcJ65p-5oM8bQh5cCiVc1UtAwSiCe8EbwwjR5JGNEPI4eWWcH09UpslXt3HD5dHfWVf_fFduhFQmjQXdUhNMa-8DB5orkVgnYvO6rbi45g1iFLbT0mhmO1OnVd',
-                        difficulty: 'medium',
-                        time: 180,
-                        servings: '10 أشخاص',
-                        category: 'cakes',
-                        description: 'استخدمي قوالب السيليكون الحديثة لصنع كيكة موس فانيليا مذهلة بشكل هندسي.'
-                    },
-                    {
-                        id: 5,
-                        title: 'تزيين الحلويات بالذهب',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUxVDAQckC6monq5vjhglCKFfej2PZPGVPzcOSqYqMabwFdkiyaGhKjSheGfzXp_epG-YnudhOYnP6UWF-ZhCQ04sQoz5CBu_T0yje9T3vWylkL4FsJ77m8LYXgiSf6f0iIXfPdzmUu1t-_723aNyDof8sH0gfMzjx8VyM4wxmRyMFHzRHynxTQVhKKA9BLPdD4ey6mBDPyojdXsAntKqEXddWna5AH7ct73Ip3NPKs7TvwyRBAldKkwHyy5sY0jJR7F2XCMSgghPw',
-                        difficulty: 'pro',
-                        time: 15,
-                        servings: 'تزيين',
-                        category: 'decoration',
-                        description: 'طريقة التعامل مع رقائق الذهب عيار 24 الصالحة للأكل لإضافة لمسة فخامة لمنتجاتك.'
-                    },
-                    {
-                        id: 6,
-                        title: 'دليل استخدام أقماع التزيين',
-                        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNi_th0kE3oGGi9IymwQVjDObGIIVgGyRAtLTka46fOyznMx_3NiHHd--tVzcAobzCsByB7j_Quy0bezxG3Arhea07gAfdxaFGMGAKiuoP3h52beY7cBqdE7p2AHo0n0LNCXiE_jvLvayC3MvuQ69mfhSDvZ5z8rYjjNyV7QduOVGnDyKW5MZFcQDvFXRebAshf1XJtw_gTKqS90nwm6RtCxUSq7kM3XbE8_u5xeGKfnKVzdejprEyTLDAJQKsifE1m8nEbRrFKc-y',
-                        difficulty: 'easy',
-                        time: 60,
-                        servings: 'تعليمي',
-                        category: 'decoration',
-                        description: 'تعرفي على أشكال الأقماع المختلفة وكيفية صنع ورود وكشكشة مثالية بالكريمة.'
-                    }
-                ],
-                get filteredRecipes() {
-                    return this.recipes.filter(recipe => {
-                        const matchesSearch = recipe.title.toLowerCase().includes(this.search.toLowerCase()) ||
-                            recipe.description.toLowerCase().includes(this.search.toLowerCase());
-                        const matchesDiff = this.filters.difficulty === '' || recipe.difficulty === this.filters.difficulty;
-                        const matchesCat = this.filters.category === '' || recipe.category === this.filters.category;
-                        let matchesTime = true;
-                        if (this.filters.time === 'under_30') matchesTime = recipe.time < 30;
-                        else if (this.filters.time === '30_60') matchesTime = recipe.time >= 30 && recipe.time <= 60;
-                        else if (this.filters.time === 'over_60') matchesTime = recipe.time > 60;
-                        return matchesSearch && matchesDiff && matchesCat && matchesTime;
-                    });
-                },
-                resetFilters() {
-                    this.search = '';
-                    this.filters = { difficulty: '', time: '', category: '' };
-                },
-                hasActiveFilters() {
-                    return this.search !== '' || this.filters.difficulty !== '' || this.filters.time !== '' || this.filters.category !== '';
-                },
-                getDifficultyLabel(level) {
-                    const labels = { 'easy': 'سهل', 'medium': 'متوسط', 'pro': 'احترافي' };
-                    return labels[level] || level;
-                },
-                getDifficultyIcon(level) {
-                    const icons = { 'easy': 'sentiment_satisfied', 'medium': 'signal_cellular_alt_2_bar', 'pro': 'military_tech' };
-                    return icons[level] || 'help';
-                },
-                getCategoryLabel(cat) {
-                    const labels = {
-                        'cakes': 'كيك',
-                        'tarts': 'تارت',
-                        'pastries': 'معجنات',
-                        'decoration': 'تزيين',
-                        'cold_desserts': 'حلويات باردة'
-                    };
-                    return labels[cat] || cat;
-                },
-                getTimeLabel(time) {
-                        const labels = {
-                        'under_30': 'أقل من 30 دقيقة',
-                        '30_60': '30 - 60 دقيقة',
-                        'over_60': 'أكثر من ساعة'
-                    };
-                    return labels[time] || time;
-                }
-            }">
+        search: '',
+        filters: {
+            difficulty: '',
+            time: '',
+            category: ''
+        },
+        recipes: [{
+                id: 1,
+                title: 'تشيز كيك الفراولة البارد',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuATySq5W8srPLoXBxWHWHwxS6Rse3NBixmzBs58Y_ZoMnawaSsGyrFEK7masw4nZr7I5m4VFWgol9oGC5WmRTHTZNEIjlTC8izxCbfHclaZikIyBYejFD0BdIcq1CrD-damvGm68f7_3MunTkShxkz9tJqU8bjaey6044zL4qMOWcHguPE96IWfnl3rgBowECazZQ-Ghtc29kQNMMC8DzU3F86tKlwifmHoEtCYE4tJdQuNntDY8PYcJwvyGRKMNweQtB30QbkjO9ZU',
+                difficulty: 'medium',
+                time: 45,
+                servings: '8 أشخاص',
+                category: 'cold_desserts',
+                description: 'وصفة كلاسيكية بقوام كريمي ناعم وطبقة بسكويت مقرمشة، مزينة بصلصة الفراولة الطازجة.'
+            },
+            {
+                id: 2,
+                title: 'الماكرون الفرنسي المثالي',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDii73SFJez4obkgSgJT_6a38v900GUS7JS1pyAAC5LR4uyrWlLV3iOi6vkr6FJfExOKS3Cjc-AY66O872Kl24Wn79Vci7SSy_y0iblaNWkCXlBPH0SfKdtwh_C1MPAMkKOaEoqCm09f8U7C99OSdoh3gbhPZUhwfKt_FzD9VP4u9qtcEI7PepKwNd2Q8bLdTIcR1QvFM7kYlNn66RijKSsnbum97sLR7uRFZJI-Dn6xsalQ98E1CZHBILPVCpHQLYBaSyV0-oX67FK',
+                difficulty: 'pro',
+                time: 90,
+                servings: '24 قطعة',
+                category: 'pastries',
+                description: 'تعلمي أسرار الماكرون الناجح، من الميرانج المتماسك إلى الحشوة الغنية (الغناش).'
+            },
+            {
+                id: 3,
+                title: 'ترافل الشوكولاتة الداكنة',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDhmZYfFBBoOuWtpe23v0HXCFN_1qGKrKAh4sYaB-8OPcnPUiq5GcamG9p5B8ndW9fvcvbaydKxjqTGaYOMoxtf0gB3Db3LKGSJNbjMHuCaF-H-DzFSuz8n22ht0Cxjd02KO-BtddNuKj46xpKsFqFV00fslJwyNjZ03cXL4TCHyhwaQ19iikepTh2SrlUV7rjJ-7pRs7uOfV_WVXEjHaqEC7rJPEPDniHY33oKnWCg3HPGARYyI-yI6Om7kgZ_qpnCWTmpY8-Ircof',
+                difficulty: 'easy',
+                time: 30,
+                servings: '15 قطعة',
+                category: 'cakes',
+                description: 'حلوى فاخرة وسريعة التحضير باستخدام حبيبات الشوكولاتة البلجيكية عالية الجودة.'
+            },
+            {
+                id: 4,
+                title: 'كيك الموس الهندسي',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5bp7F2WFWSSoT12FFVu7Yiw1y8D96emqChjbq-vzeitJrIfbzWPn90zFsUCy9dysc-N_FkH5BmbzrLxCvcbAkrtOYGFTWttn626LT6g6AVZVFvNwerYkH8em7aIrLx7alGPbZVnhv3D9cNX0E2EcJ65p-5oM8bQh5cCiVc1UtAwSiCe8EbwwjR5JGNEPI4eWWcH09UpslXt3HD5dHfWVf_fFduhFQmjQXdUhNMa-8DB5orkVgnYvO6rbi45g1iFLbT0mhmO1OnVd',
+                difficulty: 'medium',
+                time: 180,
+                servings: '10 أشخاص',
+                category: 'cakes',
+                description: 'استخدمي قوالب السيليكون الحديثة لصنع كيكة موس فانيليا مذهلة بشكل هندسي.'
+            },
+            {
+                id: 5,
+                title: 'تزيين الحلويات بالذهب',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUxVDAQckC6monq5vjhglCKFfej2PZPGVPzcOSqYqMabwFdkiyaGhKjSheGfzXp_epG-YnudhOYnP6UWF-ZhCQ04sQoz5CBu_T0yje9T3vWylkL4FsJ77m8LYXgiSf6f0iIXfPdzmUu1t-_723aNyDof8sH0gfMzjx8VyM4wxmRyMFHzRHynxTQVhKKA9BLPdD4ey6mBDPyojdXsAntKqEXddWna5AH7ct73Ip3NPKs7TvwyRBAldKkwHyy5sY0jJR7F2XCMSgghPw',
+                difficulty: 'pro',
+                time: 15,
+                servings: 'تزيين',
+                category: 'decoration',
+                description: 'طريقة التعامل مع رقائق الذهب عيار 24 الصالحة للأكل لإضافة لمسة فخامة لمنتجاتك.'
+            },
+            {
+                id: 6,
+                title: 'دليل استخدام أقماع التزيين',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNi_th0kE3oGGi9IymwQVjDObGIIVgGyRAtLTka46fOyznMx_3NiHHd--tVzcAobzCsByB7j_Quy0bezxG3Arhea07gAfdxaFGMGAKiuoP3h52beY7cBqdE7p2AHo0n0LNCXiE_jvLvayC3MvuQ69mfhSDvZ5z8rYjjNyV7QduOVGnDyKW5MZFcQDvFXRebAshf1XJtw_gTKqS90nwm6RtCxUSq7kM3XbE8_u5xeGKfnKVzdejprEyTLDAJQKsifE1m8nEbRrFKc-y',
+                difficulty: 'easy',
+                time: 60,
+                servings: 'تعليمي',
+                category: 'decoration',
+                description: 'تعرفي على أشكال الأقماع المختلفة وكيفية صنع ورود وكشكشة مثالية بالكريمة.'
+            }
+        ],
+        get filteredRecipes() {
+            return this.recipes.filter(recipe => {
+                const matchesSearch = recipe.title.toLowerCase().includes(this.search.toLowerCase()) ||
+                    recipe.description.toLowerCase().includes(this.search.toLowerCase());
+                const matchesDiff = this.filters.difficulty === '' || recipe.difficulty === this.filters.difficulty;
+                const matchesCat = this.filters.category === '' || recipe.category === this.filters.category;
+                let matchesTime = true;
+                if (this.filters.time === 'under_30') matchesTime = recipe.time < 30;
+                else if (this.filters.time === '30_60') matchesTime = recipe.time >= 30 && recipe.time <= 60;
+                else if (this.filters.time === 'over_60') matchesTime = recipe.time > 60;
+                return matchesSearch && matchesDiff && matchesCat && matchesTime;
+            });
+        },
+        resetFilters() {
+            this.search = '';
+            this.filters = { difficulty: '', time: '', category: '' };
+        },
+        hasActiveFilters() {
+            return this.search !== '' || this.filters.difficulty !== '' || this.filters.time !== '' || this.filters.category !== '';
+        },
+        getDifficultyLabel(level) {
+            const labels = { 'easy': 'سهل', 'medium': 'متوسط', 'pro': 'احترافي' };
+            return labels[level] || level;
+        },
+        getDifficultyIcon(level) {
+            const icons = { 'easy': 'sentiment_satisfied', 'medium': 'signal_cellular_alt_2_bar', 'pro': 'military_tech' };
+            return icons[level] || 'help';
+        },
+        getCategoryLabel(cat) {
+            const labels = {
+                'cakes': 'كيك',
+                'tarts': 'تارت',
+                'pastries': 'معجنات',
+                'decoration': 'تزيين',
+                'cold_desserts': 'حلويات باردة'
+            };
+            return labels[cat] || cat;
+        },
+        getTimeLabel(time) {
+            const labels = {
+                'under_30': 'أقل من 30 دقيقة',
+                '30_60': '30 - 60 دقيقة',
+                'over_60': 'أكثر من ساعة'
+            };
+            return labels[time] || time;
+        }
+    }">
         {{-- Hero Section --}}
         <section class="relative h-[60vh] min-h-[500px] w-full overflow-hidden flex items-center justify-center">
             <div class="absolute inset-0">
@@ -170,7 +169,8 @@
                     {{-- Reset Filter --}}
                     <button @click="resetFilters()"
                         class="flex shrink-0 items-center gap-2 px-5 py-2 rounded-lg text-sm font-bold shadow-md transition-colors"
-                        :class="hasActiveFilters() ? 'bg-white text-dusty-dark hover:bg-gray-50 border border-gray-200' : 'bg-warm-brown text-white hover:bg-primary border-transparent'">
+                        :class="hasActiveFilters() ? 'bg-white text-dusty-dark hover:bg-gray-50 border border-gray-200' :
+                            'bg-warm-brown text-white hover:bg-primary border-transparent'">
                         <span class="material-symbols-outlined text-lg">grid_view</span>
                         الكل
                     </button>
@@ -246,28 +246,32 @@
                                     <div class="flex flex-col gap-2">
                                         <button @click="filters.difficulty = ''; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.difficulty === '' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.difficulty === '' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>الكل</span>
                                             <span x-show="filters.difficulty === ''"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.difficulty = 'easy'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.difficulty === 'easy' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.difficulty === 'easy' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>سهل</span>
                                             <span x-show="filters.difficulty === 'easy'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.difficulty = 'medium'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.difficulty === 'medium' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.difficulty === 'medium' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>متوسط</span>
                                             <span x-show="filters.difficulty === 'medium'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.difficulty = 'pro'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.difficulty === 'pro' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.difficulty === 'pro' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>احترافي</span>
                                             <span x-show="filters.difficulty === 'pro'"
                                                 class="material-symbols-outlined text-sm">check</span>
@@ -346,28 +350,32 @@
                                     <div class="flex flex-col gap-2">
                                         <button @click="filters.time = ''; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.time === '' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.time === '' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>الكل</span>
                                             <span x-show="filters.time === ''"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.time = 'under_30'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.time === 'under_30' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.time === 'under_30' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>أقل من 30 دقيقة</span>
                                             <span x-show="filters.time === 'under_30'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.time = '30_60'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.time === '30_60' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.time === '30_60' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>30 - 60 دقيقة</span>
                                             <span x-show="filters.time === '30_60'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.time = 'over_60'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.time === 'over_60' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.time === 'over_60' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>أكثر من ساعة</span>
                                             <span x-show="filters.time === 'over_60'"
                                                 class="material-symbols-outlined text-sm">check</span>
@@ -447,28 +455,32 @@
                                     <div class="flex flex-col gap-2">
                                         <button @click="filters.category = ''; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.category === '' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.category === '' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>الكل</span>
                                             <span x-show="filters.category === ''"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.category = 'cakes'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.category === 'cakes' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.category === 'cakes' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>كيك</span>
                                             <span x-show="filters.category === 'cakes'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.category = 'tarts'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.category === 'tarts' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.category === 'tarts' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>تارت</span>
                                             <span x-show="filters.category === 'tarts'"
                                                 class="material-symbols-outlined text-sm">check</span>
                                         </button>
                                         <button @click="filters.category = 'pastries'; open = false"
                                             class="flex w-full items-center justify-between px-4 py-3 rounded-lg text-sm transition-colors"
-                                            :class="filters.category === 'pastries' ? 'bg-rose-50 text-primary font-bold' : 'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
+                                            :class="filters.category === 'pastries' ? 'bg-rose-50 text-primary font-bold' :
+                                                'text-warm-brown hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-white/5'">
                                             <span>معجنات</span>
                                             <span x-show="filters.category === 'pastries'"
                                                 class="material-symbols-outlined text-sm">check</span>
@@ -519,14 +531,17 @@
                             <span
                                 class="absolute top-4 right-4 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 border"
                                 :class="{
-                                                                'bg-green-50/90 text-green-800 border-green-100': recipe.difficulty === 'easy',
-                                                                'bg-white/90 text-warm-brown border-gray-100': recipe.difficulty === 'medium',
-                                                                'bg-warm-brown/90 text-white border-gray-600': recipe.difficulty === 'pro'
-                                                              }">
-                                <span class="material-symbols-outlined text-sm" :class="{
-                                                                    'text-green-600': recipe.difficulty === 'easy',
-                                                                    'text-gold-accent': recipe.difficulty === 'medium' || recipe.difficulty === 'pro'
-                                                                  }" x-text="getDifficultyIcon(recipe.difficulty)"></span>
+                                    'bg-green-50/90 text-green-800 border-green-100': recipe.difficulty === 'easy',
+                                    'bg-white/90 text-warm-brown border-gray-100': recipe.difficulty === 'medium',
+                                    'bg-warm-brown/90 text-white border-gray-600': recipe.difficulty === 'pro'
+                                }">
+                                <span class="material-symbols-outlined text-sm"
+                                    :class="{
+                                        'text-green-600': recipe.difficulty === 'easy',
+                                        'text-gold-accent': recipe.difficulty === 'medium' || recipe
+                                            .difficulty === 'pro'
+                                    }"
+                                    x-text="getDifficultyIcon(recipe.difficulty)"></span>
                                 <span x-text="getDifficultyLabel(recipe.difficulty)"></span>
                             </span>
                         </a>

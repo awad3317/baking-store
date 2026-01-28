@@ -40,12 +40,12 @@
                 <h4 class="mb-2 text-lg font-bold text-warm-brown dark:text-white">روابط هامة</h4>
                 <ul class="flex flex-col gap-3 text-sm text-dusty-dark dark:text-gray-400 font-medium w-full">
                     <li><a class="flex items-center gap-2 hover:text-primary transition-colors"
-                            href="{{ route('return-policy') }}"><span
+                            href="{{ route('policy') }}"><span
                                 class="material-symbols-outlined text-base">chevron_left</span> سياسة الاستبدال</a></li>
                     <li><a class="flex items-center gap-2 hover:text-primary transition-colors"
                             href="{{ route('terms') }}"><span
                                 class="material-symbols-outlined text-base">chevron_left</span> الشروط والأحكام</a></li>
-                    <li><a class="flex items-center gap-2 hover:text-primary transition-colors" href="#"><span
+                    <li><a class="flex items-center gap-2 hover:text-primary transition-colors" href="{{ route('contact') }}"><span
                                 class="material-symbols-outlined text-base">chevron_left</span> تواصل معنا</a></li>
                 </ul>
             </div>

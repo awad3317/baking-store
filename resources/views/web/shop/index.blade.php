@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('web.layouts.app')
 
 @section('title', 'المتجر - سويت سبلايز')
 
@@ -100,7 +100,7 @@
 
             {{-- Drawer Content (Sidebar Filters) --}}
             <div class="p-4">
-                @include('partials.shop-sidebar-content')
+                @include('web.partials.shop-sidebar-content')
             </div>
 
             {{-- Drawer Footer with Apply Button --}}
@@ -116,7 +116,7 @@
         <div class="mx-4 md:mx-6 flex flex-col gap-8 lg:flex-row">
             {{-- Desktop Sidebar (hidden on mobile) --}}
             <aside class="hidden lg:block w-72 shrink-0 space-y-6">
-                @include('partials.shop-sidebar-content')
+                @include('web.partials.shop-sidebar-content')
             </aside>
 
             {{-- Products Grid --}}
