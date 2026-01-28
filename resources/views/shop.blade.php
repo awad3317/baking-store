@@ -125,49 +125,49 @@
                     {{-- Product 1: On Sale --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5bp7F2WFWSSoT12FFVu7Yiw1y8D96emqChjbq-vzeitJrIfbzWPn90zFsUCy9dysc-N_FkH5BmbzrLxCvcbAkrtOYGFTWttn626LT6g6AVZVFvNwerYkH8em7aIrLx7alGPbZVnhv3D9cNX0E2EcJ65p-5oM8bQh5cCiVc1UtAwSiCe8EbwwjR5JGNEPI4eWWcH09UpslXt3HD5dHfWVf_fFduhFQmjQXdUhNMa-8DB5orkVgnYvO6rbi45g1iFLbT0mhmO1OnVd"
-                        title="مجموعة قوالب هندسية" category="قوالب سيليكون" price="55.00 ر.س" oldPrice="65.00 ر.س"
+                        title="مجموعة قوالب هندسية" category="قوالب سيليكون" price="22,000 ر.ي" oldPrice="26,000 ر.ي"
                         badge="خصم 10%" />
 
                     {{-- Product 2: Standard --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuDUxVDAQckC6monq5vjhglCKFfej2PZPGVPzcOSqYqMabwFdkiyaGhKjSheGfzXp_epG-YnudhOYnP6UWF-ZhCQ04sQoz5CBu_T0yje9T3vWylkL4FsJ77m8LYXgiSf6f0iIXfPdzmUu1t-_723aNyDof8sH0gfMzjx8VyM4wxmRyMFHzRHynxTQVhKKA9BLPdD4ey6mBDPyojdXsAntKqEXddWna5AH7ct73Ip3NPKs7TvwyRBAldKkwHyy5sY0jJR7F2XCMSgghPw"
-                        title="رقائق الذهب عيار 24" category="زينة الكيك" price="82.00 ر.س" />
+                        title="رقائق الذهب عيار 24" category="زينة الكيك" price="32,800 ر.ي" />
 
                     {{-- Product 3: Standard --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuDhmZYfFBBoOuWtpe23v0HXCFN_1qGKrKAh4sYaB-8OPcnPUiq5GcamG9p5B8ndW9fvcvbaydKxjqTGaYOMoxtf0gB3Db3LKGSJNbjMHuCaF-H-DzFSuz8n22ht0Cxjd02KO-BtddNuKj46xpKsFqFV00fslJwyNjZ03cXL4TCHyhwaQ19iikepTh2SrlUV7rjJ-7pRs7uOfV_WVXEjHaqEC7rJPEPDniHY33oKnWCg3HPGARYyI-yI6Om7kgZ_qpnCWTmpY8-Ircof"
-                        title="شوكولاتة بلجيكية داكنة" category="مكونات خام" price="68.00 ر.س" />
+                        title="شوكولاتة بلجيكية داكنة" category="مكونات خام" price="27,200 ر.ي" />
 
                     {{-- Product 4: Standard --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuCNi_th0kE3oGGi9IymwQVjDObGIIVgGyRAtLTka46fOyznMx_3NiHHd--tVzcAobzCsByB7j_Quy0bezxG3Arhea07gAfdxaFGMGAKiuoP3h52beY7cBqdE7p2AHo0n0LNCXiE_jvLvayC3MvuQ69mfhSDvZ5z8rYjjNyV7QduOVGnDyKW5MZFcQDvFXRebAshf1XJtw_gTKqS90nwm6RtCxUSq7kM3XbE8_u5xeGKfnKVzdejprEyTLDAJQKsifE1m8nEbRrFKc-y"
-                        title="طقم أقماع احترافي 24 قطعة" category="أدوات تزيين" price="120.00 ر.س" />
+                        title="طقم أقماع احترافي 24 قطعة" category="أدوات تزيين" price="48,000 ر.ي" />
 
                     {{-- Product 5: Standard --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuDii73SFJez4obkgSgJT_6a38v900GUS7JS1pyAAC5LR4uyrWlLV3iOi6vkr6FJfExOKS3Cjc-AY66O872Kl24Wn79Vci7SSy_y0iblaNWkCXlBPH0SfKdtwh_C1MPAMkKOaEoqCm09f8U7C99OSdoh3gbhPZUhwfKt_FzD9VP4u9qtcEI7PepKwNd2Q8bLdTIcR1QvFM7kYlNn66RijKSsnbum97sLR7uRFZJI-Dn6xsalQ98E1CZHBILPVCpHQLYBaSyV0-oX67FK"
-                        title="علب ماكرون فاخرة" category="علب وتغليف" price="45.00 ر.س" />
+                        title="علب ماكرون فاخرة" category="علب وتغليف" price="18,000 ر.ي" />
 
                     {{-- Product 6: Sold Out --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuATySq5W8srPLoXBxWHWHwxS6Rse3NBixmzBs58Y_ZoMnawaSsGyrFEK7masw4nZr7I5m4VFWgol9oGC5WmRTHTZNEIjlTC8izxCbfHclaZikIyBYejFD0BdIcq1CrD-damvGm68f7_3MunTkShxkz9tJqU8bjaey6044zL4qMOWcHguPE96IWfnl3rgBowECazZQ-Ghtc29kQNMMC8DzU3F86tKlwifmHoEtCYE4tJdQuNntDY8PYcJwvyGRKMNweQtB30QbkjO9ZU"
-                        title="كتاب وصفات سويت سبلايز" category="أدوات تزيين" price="120.00 ر.س" :isSoldOut="true" />
+                        title="كتاب وصفات سويت سبلايز" category="أدوات تزيين" price="48,000 ر.ي" :isSoldOut="true" />
 
                     {{-- Product 7: With Filter --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ5bp7F2WFWSSoT12FFVu7Yiw1y8D96emqChjbq-vzeitJrIfbzWPn90zFsUCy9dysc-N_FkH5BmbzrLxCvcbAkrtOYGFTWttn626LT6g6AVZVFvNwerYkH8em7aIrLx7alGPbZVnhv3D9cNX0E2EcJ65p-5oM8bQh5cCiVc1UtAwSiCe8EbwwjR5JGNEPI4eWWcH09UpslXt3HD5dHfWVf_fFduhFQmjQXdUhNMa-8DB5orkVgnYvO6rbi45g1iFLbT0mhmO1OnVd"
-                        title="عجينة سكر فوندان أبيض" category="مكونات خام" price="35.00 ر.س"
+                        title="عجينة سكر فوندان أبيض" category="مكونات خام" price="14,000 ر.ي"
                         imageFilter="hue-rotate(45deg)" />
 
                     {{-- Product 8: With Filter --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuDUxVDAQckC6monq5vjhglCKFfej2PZPGVPzcOSqYqMabwFdkiyaGhKjSheGfzXp_epG-YnudhOYnP6UWF-ZhCQ04sQoz5CBu_T0yje9T3vWylkL4FsJ77m8LYXgiSf6f0iIXfPdzmUu1t-_723aNyDof8sH0gfMzjx8VyM4wxmRyMFHzRHynxTQVhKKA9BLPdD4ey6mBDPyojdXsAntKqEXddWna5AH7ct73Ip3NPKs7TvwyRBAldKkwHyy5sY0jJR7F2XCMSgghPw"
-                        title="أشرطة تزيين ساتان" category="علب وتغليف" price="12.00 ر.س" imageFilter="sepia(0.3)" />
+                        title="أشرطة تزيين ساتان" category="علب وتغليف" price="4,800 ر.ي" imageFilter="sepia(0.3)" />
 
                     {{-- Product 9: With Filter --}}
                     <x-product-card
                         image="https://lh3.googleusercontent.com/aida-public/AB6AXuDhmZYfFBBoOuWtpe23v0HXCFN_1qGKrKAh4sYaB-8OPcnPUiq5GcamG9p5B8ndW9fvcvbaydKxjqTGaYOMoxtf0gB3Db3LKGSJNbjMHuCaF-H-DzFSuz8n22ht0Cxjd02KO-BtddNuKj46xpKsFqFV00fslJwyNjZ03cXL4TCHyhwaQ19iikepTh2SrlUV7rjJ-7pRs7uOfV_WVXEjHaqEC7rJPEPDniHY33oKnWCg3HPGARYyI-yI6Om7kgZ_qpnCWTmpY8-Ircof"
-                        title="ملعقة سباتولا معدنية" category="أدوات تزيين" price="28.00 ر.س"
+                        title="ملعقة سباتولا معدنية" category="أدوات تزيين" price="11,200 ر.ي"
                         imageFilter="brightness(1.1)" />
                 </div>
 

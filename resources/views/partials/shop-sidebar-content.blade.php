@@ -44,7 +44,7 @@
 
     {{-- Price Range --}}
     <div class="mb-6 border-b border-gray-100 pb-6">
-        <h4 class="mb-4 text-sm font-bold text-warm-brown">السعر (ر.س)</h4>
+        <h4 class="mb-4 text-sm font-bold text-warm-brown">السعر (ر.ي)</h4>
         <div class="flex items-center gap-2">
             <input type="number" x-model="priceMin"
                 class="w-full rounded-lg border-gray-200 bg-stone-50 py-2 text-center text-sm focus:border-dusty-rose focus:ring-dusty-rose"

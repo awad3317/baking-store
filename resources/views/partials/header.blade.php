@@ -18,16 +18,13 @@
             <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
                 href="{{ route('recipes') }}">الوصفات</a>
 
-            <a class="text-sm font-medium text-warm-brown hover:text-primary dark:text-gray-200" href="#">تواصل معنا</a>
+            <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
+                href="{{ route('contact') }}">تواصل معنا</a>
         </nav>
 
         {{-- Actions --}}
         <div class="flex items-center gap-4">
-            {{-- User Profile --}}
-            <button
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-background-light text-warm-brown transition-colors hover:bg-primary/10 hover:text-primary dark:bg-[#2f1f24] dark:text-white">
-                <span class="material-symbols-outlined">person</span>
-            </button>
+
 
             {{-- Mobile Menu Button --}}
             <button @click="mobileMenuOpen = !mobileMenuOpen"
@@ -51,6 +48,7 @@
             href="{{ route('shop') }}">المتجر</a>
         <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
             href="{{ route('recipes') }}">الوصفات</a>
-        <a class="text-sm font-medium text-warm-brown hover:text-primary dark:text-gray-200" href="#">تواصل معنا</a>
+        <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
+            href="{{ route('contact') }}">تواصل معنا</a>
     </div>
 </header>

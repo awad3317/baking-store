@@ -150,38 +150,38 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 {{-- Product 1 --}}
-                <div @click="openProduct('قوالب سيليكون', '٢٥.٠٠ ر.س', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCtaYETpEMbp9naFjogRCaFDQSFjM0TRd2_3vEvatFJSgA8Z1dl7THB203flW31J_b9zzLetkwiTZ8mCgWUorP_Lvzr7WU4r9TPeqAWs99J3wFRNhKXKuGqCUJH1Uobkg48f4dcG1SiRENFp7LAvlW3nA8qVdTYDOUtCB5HhBjARViyHcXDjUM0Kg9pQnurmcs0bGYLc2tpgTTxHUda91LJxPg0oD_yb-PvD4gjkOMHvZHyAiOE9Kg4uWDvfeMqxedG7f6T4reZbWuA')"
+                <div @click="openProduct('قوالب سيليكون', '10,000 ر.ي', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCtaYETpEMbp9naFjogRCaFDQSFjM0TRd2_3vEvatFJSgA8Z1dl7THB203flW31J_b9zzLetkwiTZ8mCgWUorP_Lvzr7WU4r9TPeqAWs99J3wFRNhKXKuGqCUJH1Uobkg48f4dcG1SiRENFp7LAvlW3nA8qVdTYDOUtCB5HhBjARViyHcXDjUM0Kg9pQnurmcs0bGYLc2tpgTTxHUda91LJxPg0oD_yb-PvD4gjkOMHvZHyAiOE9Kg4uWDvfeMqxedG7f6T4reZbWuA')"
                     class="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all">
                     <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtaYETpEMbp9naFjogRCaFDQSFjM0TRd2_3vEvatFJSgA8Z1dl7THB203flW31J_b9zzLetkwiTZ8mCgWUorP_Lvzr7WU4r9TPeqAWs99J3wFRNhKXKuGqCUJH1Uobkg48f4dcG1SiRENFp7LAvlW3nA8qVdTYDOUtCB5HhBjARViyHcXDjUM0Kg9pQnurmcs0bGYLc2tpgTTxHUda91LJxPg0oD_yb-PvD4gjkOMHvZHyAiOE9Kg4uWDvfeMqxedG7f6T4reZbWuA");'>
                     </div>
                     <div class="flex justify-between items-center">
                         <p class="text-dark-text font-bold">قوالب سيليكون</p>
-                        <p class="text-warm-text">٢٥.٠٠ ر.س</p>
+                        <p class="text-warm-text">10,000 ر.ي</p>
                     </div>
                 </div>
 
                 {{-- Product 2 --}}
-                <div @click="openProduct('طقم خفاقات', '٣٢.٠٠ ر.س', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3GZFjHjza8PcD1FToGPSLYcK5cHprBfTuu7dEsPw09OtJaHmv1yZVoDVS05JwVeDGx41e-VKvS0NU4sqOfjrNnNYyzvL-pw7WyrwOmd6szz8Lu27W-3SNzpaOvdULn8j9RqiPV4XNMDkZZflOSJp_G7fG3JrrDGhtdLPWfgNzDuxzqRAtozeyUdw8op4WJ5BKjzrMal0HUl2nfJYcdg3rpV_R8mhyYogOgKu4N8QXg3Iq1fWk72URNgaIPWGnfeH7pVMpBZUf6oTV')"
+                <div @click="openProduct('طقم خفاقات', '12,800 ر.ي', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3GZFjHjza8PcD1FToGPSLYcK5cHprBfTuu7dEsPw09OtJaHmv1yZVoDVS05JwVeDGx41e-VKvS0NU4sqOfjrNnNYyzvL-pw7WyrwOmd6szz8Lu27W-3SNzpaOvdULn8j9RqiPV4XNMDkZZflOSJp_G7fG3JrrDGhtdLPWfgNzDuxzqRAtozeyUdw8op4WJ5BKjzrMal0HUl2nfJYcdg3rpV_R8mhyYogOgKu4N8QXg3Iq1fWk72URNgaIPWGnfeH7pVMpBZUf6oTV')"
                     class="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all">
                     <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3GZFjHjza8PcD1FToGPSLYcK5cHprBfTuu7dEsPw09OtJaHmv1yZVoDVS05JwVeDGx41e-VKvS0NU4sqOfjrNnNYyzvL-pw7WyrwOmd6szz8Lu27W-3SNzpaOvdULn8j9RqiPV4XNMDkZZflOSJp_G7fG3JrrDGhtdLPWfgNzDuxzqRAtozeyUdw8op4WJ5BKjzrMal0HUl2nfJYcdg3rpV_R8mhyYogOgKu4N8QXg3Iq1fWk72URNgaIPWGnfeH7pVMpBZUf6oTV");'>
                     </div>
                     <div class="flex justify-between items-center">
                         <p class="text-dark-text font-bold">طقم خفاقات</p>
-                        <p class="text-warm-text">٣٢.٠٠ ر.س</p>
+                        <p class="text-warm-text">12,800 ر.ي</p>
                     </div>
                 </div>
 
                 {{-- Product 3 --}}
-                <div @click="openProduct('شوبك رخامي', '٥٥.٠٠ ر.س', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAqavA86IB5Ts8o-TfGRZ-JP82S905Yjldh_CG7FvHIT82p8wv-CoHW2qVswUtTYwwWyfyho0kmYYphd2dlrewmL-omp2nm-_OqRm3E10wjbGRNeU5DfRIE-ThakSZ_JKc9AWWgdqg9Y-rbg4hTPqjMYOIGrJ0MptA5uj_AlMrtZeLII-zKRWdep_yOJO5hctIwYKN_s3Tte-M0Rck04uByL5ErtdLZSFzXpWqoK-p0TOl3YbAUYuUClEPLib9adP2YAbIM9_mNPGVA')"
+                <div @click="openProduct('شوبك رخامي', '22,000 ر.ي', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAqavA86IB5Ts8o-TfGRZ-JP82S905Yjldh_CG7FvHIT82p8wv-CoHW2qVswUtTYwwWyfyho0kmYYphd2dlrewmL-omp2nm-_OqRm3E10wjbGRNeU5DfRIE-ThakSZ_JKc9AWWgdqg9Y-rbg4hTPqjMYOIGrJ0MptA5uj_AlMrtZeLII-zKRWdep_yOJO5hctIwYKN_s3Tte-M0Rck04uByL5ErtdLZSFzXpWqoK-p0TOl3YbAUYuUClEPLib9adP2YAbIM9_mNPGVA')"
                     class="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-sm cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all">
                     <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                         style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqavA86IB5Ts8o-TfGRZ-JP82S905Yjldh_CG7FvHIT82p8wv-CoHW2qVswUtTYwwWyfyho0kmYYphd2dlrewmL-omp2nm-_OqRm3E10wjbGRNeU5DfRIE-ThakSZ_JKc9AWWgdqg9Y-rbg4hTPqjMYOIGrJ0MptA5uj_AlMrtZeLII-zKRWdep_yOJO5hctIwYKN_s3Tte-M0Rck04uByL5ErtdLZSFzXpWqoK-p0TOl3YbAUYuUClEPLib9adP2YAbIM9_mNPGVA");'>
                     </div>
                     <div class="flex justify-between items-center">
                         <p class="text-dark-text font-bold">شوبك رخامي</p>
-                        <p class="text-warm-text">٥٥.٠٠ ر.س</p>
+                        <p class="text-warm-text">22,000 ر.ي</p>
                     </div>
                 </div>
 

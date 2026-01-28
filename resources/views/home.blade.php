@@ -61,8 +61,8 @@
     <section class="sticky top-[85px] z-30 mx-auto max-w-7xl border-b border-[#f0ebed] bg-background-light/95 px-4 pt-2 py-4 backdrop-blur-sm md:px-6 dark:bg-background-dark/95 dark:border-[#3a2d32]">
         <div class="no-scrollbar flex gap-3 overflow-x-auto">
             <button class="shrink-0 rounded-full bg-warm-brown px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-primary">الكل</button>
-            @foreach(['القوالب', 'الكريمات والحشوات', 'أدوات', 'فن الطعام', 'التغليف'] as $category)
-                <button class="shrink-0 rounded-full bg-white px-6 py-2 text-sm font-medium text-dusty-dark ring-1 ring-[#f0ebed] transition-colors hover:bg-primary/5 hover:text-primary hover:ring-primary/20 dark:bg-[#2f1f24] dark:ring-[#3a2d32] dark:text-gray-300">{{ $category }}</button>
+            @foreach($categories as $category)
+                <button class="shrink-0 rounded-full bg-white px-6 py-2 text-sm font-medium text-dusty-dark ring-1 ring-[#f0ebed] transition-colors hover:bg-primary/5 hover:text-primary hover:ring-primary/20 dark:bg-[#2f1f24] dark:ring-[#3a2d32] dark:text-gray-300">{{ $category->name }}</button>
             @endforeach
         </div>
     </section>
@@ -77,11 +77,12 @@
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             @foreach($products as $product)
                 <x-product-card 
-                    :image="$product['image']"
-                    :title="$product['title']"
-                    :description="$product['description']"
-                    :price="$product['price']"
-                    :badge="$product['badge'] ?? null"
+                    :image="$product->image"
+                    :title="$product->title"
+                    :description="$product->description"
+                    :price="$product->price"
+                    :currency="$product->currency->symbol"
+                    :badge="$product->badge ?? null"
                 />
             @endforeach
             

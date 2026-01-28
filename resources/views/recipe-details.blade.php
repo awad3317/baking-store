@@ -321,8 +321,8 @@
                             <div class="p-6 bg-white dark:bg-[#2a1d21] relative z-10">
                                 <div class="flex items-end justify-center gap-3 mb-6">
                                     <div class="text-center">
-                                        <span class="block text-xs text-gray-400 line-through mb-0.5">285 ر.س</span>
-                                        <span class="block text-3xl font-extrabold text-primary">199 ر.س</span>
+                                        <span class="block text-xs text-gray-400 line-through mb-0.5">114,000 ر.ي</span>
+                                        <span class="block text-3xl font-extrabold text-primary">80,000 ر.ي</span>
                                     </div>
                                 </div>
                                 <button
@@ -353,8 +353,8 @@
                                         <span class="text-dusty-dark dark:text-gray-300 font-medium">ورق ذهب عيار 24</span>
                                     </div>
                                     <span
-                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">45
-                                        ر.س</span>
+                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">18,000
+                                        ر.ي</span>
                                 </li>
                                 <li
                                     class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
@@ -367,8 +367,8 @@
                                             هندسي</span>
                                     </div>
                                     <span
-                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">95
-                                        ر.س</span>
+                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">38,000
+                                        ر.ي</span>
                                 </li>
                                 <li
                                     class="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
@@ -380,8 +380,8 @@
                                             دقيقة</span>
                                     </div>
                                     <span
-                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">65
-                                        ر.س</span>
+                                        class="text-xs font-bold text-warm-brown dark:text-white bg-gray-100 dark:bg-white/10 px-2 py-1 rounded">26,000
+                                        ر.ي</span>
                                 </li>
                             </ul>
                         </div>
@@ -429,7 +429,7 @@
                                 <h3 class="text-base font-bold text-warm-brown dark:text-white truncate mb-1">ورق ذهب عيار
                                     24</h3>
                                 <p class="text-sm text-dusty-dark dark:text-gray-400 mb-2">للتزيين الفاخر</p>
-                                <p class="text-primary font-bold text-lg">45 ر.س</p>
+                                <p class="text-primary font-bold text-lg">18,000 ر.ي</p>
                             </div>
                         </div>
                         <div
@@ -447,7 +447,7 @@
                                 <h3 class="text-base font-bold text-warm-brown dark:text-white truncate mb-1">طقم أقماع
                                     تزيين</h3>
                                 <p class="text-sm text-dusty-dark dark:text-gray-400 mb-2">6 رؤوس مختلفة</p>
-                                <p class="text-primary font-bold text-lg">65 ر.س</p>
+                                <p class="text-primary font-bold text-lg">26,000 ر.ي</p>
                             </div>
                         </div>
                         <div
@@ -465,7 +465,7 @@
                                 <h3 class="text-base font-bold text-warm-brown dark:text-white truncate mb-1">شوكولاتة خام
                                 </h3>
                                 <p class="text-sm text-dusty-dark dark:text-gray-400 mb-2">بلجيكية فاخرة 1 كيلو</p>
-                                <p class="text-primary font-bold text-lg">85 ر.س</p>
+                                <p class="text-primary font-bold text-lg">34,000 ر.ي</p>
                             </div>
                         </div>
                         <div
@@ -481,7 +481,7 @@
                                 <h3 class="text-base font-bold text-warm-brown dark:text-white truncate mb-1">قالب سيليكون
                                     هندسي</h3>
                                 <p class="text-sm text-dusty-dark dark:text-gray-400 mb-2">أصلي ومقاوم للحرارة</p>
-                                <p class="text-primary font-bold text-lg">95 ر.س</p>
+                                <p class="text-primary font-bold text-lg">38,000 ر.ي</p>
                             </div>
                         </div>
                     </div>

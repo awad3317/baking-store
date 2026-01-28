@@ -8,6 +8,7 @@
     'badge' => null,
     'isSoldOut' => false,
     'imageFilter' => null,
+    'currency' => 'ر.س'
 ])
 
 <div @click="$dispatch('open-product-modal', { 
@@ -15,6 +16,8 @@
         price: '{{ $price }}', 
         image: '{{ $image }}',
         category: '{{ $category ?? 'منتج' }}'
+        currency: '{{ $currency ?? 'ر.س' }}'
+        description: '{{ $description ?? '' }}'
     })" 
     class="cursor-pointer group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg ring-1 ring-gray-100/50">
     {{-- Product Image --}}
@@ -67,7 +70,7 @@
                 @if($oldPrice)
                     <span class="text-xs text-gray-400 line-through">{{ $oldPrice }}</span>
                 @endif
-                <span class="text-base font-bold {{ $isSoldOut ? 'text-gray-400' : 'text-dusty-rose' }}">{{ $price }}</span>
+                <span class="text-base font-bold {{ $isSoldOut ? 'text-gray-400' : 'text-dusty-rose' }}">{{ $price }} {{ $currency }}</span>
             </div>
             
             @if($isSoldOut)
