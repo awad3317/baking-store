@@ -8,12 +8,12 @@
 
     {{-- Fonts --}}
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="{{ asset('css/css1.css') }}"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    {{-- <link href="https://fonts.googleapis.com" rel="preconnect" /> --}}
+    {{-- <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /> --}}
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+        href="{{ asset('css/css2.css') }}"
         rel="stylesheet" />
 
     {{-- Tailwind CSS --}}
@@ -113,7 +113,8 @@
     </script>
 
     {{-- Alpine.js --}}
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="{{ asset('js/alpine/cdn.min.js') }}"></script>
+    
 
     {{-- Custom Styles --}}
     <style>

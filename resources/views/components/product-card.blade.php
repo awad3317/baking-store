@@ -15,9 +15,9 @@
         title: '{{ $title }}', 
         price: '{{ $price }}', 
         image: '{{ $image }}',
-        category: '{{ $category ?? 'منتج' }}'
-        currency: '{{ $currency ?? 'ر.س' }}'
-        description: '{{ $description ?? '' }}'
+        category: '{{ $category ?? 'منتج' }}',
+        currency: '{{ $currency ?? 'ر.س' }}',
+        description: '{{ $description ?? '' }}',
     })" 
     class="cursor-pointer group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg ring-1 ring-gray-100/50">
     {{-- Product Image --}}

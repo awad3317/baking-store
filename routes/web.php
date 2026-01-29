@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,19 +43,18 @@ Route::group([], function () {
     // Route::get('/cart', function () {
     //     return view('web.partials.cart-drawer'); // أو web.cart.index حسب ترتيبك
     // })->name('cart.index');
+
+
 });
 
-/*
-|--------------------------------------------------------------------------
-| 2. Dashboard & Authenticated Routes (مجموعة لوحة التحكم)
-|--------------------------------------------------------------------------
-| هذه الروابط تتطلب تسجيل دخول (Auth Middleware).
-| الرابط سيبدأ بـ /dashboard
-| الاسم سيبدأ بـ dashboard.
-|
-*/
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware([])->prefix('dashboard')->name('dashboard.')->group(function () {
-    //
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+require __DIR__.'/auth.php';
