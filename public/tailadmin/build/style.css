@@ -34,22 +34,24 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --color-orange-50: #fff6ed;
-    --color-orange-400: #fd853a;
-    --color-orange-500: #fb6514;
-    --color-blue-500: oklch(0.623 0.214 259.815);
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f2f4f7;
-    --color-gray-200: #e4e7ec;
-    --color-gray-300: #d0d5dd;
-    --color-gray-400: #98a2b3;
-    --color-gray-500: #667085;
-    --color-gray-600: #475467;
-    --color-gray-700: #344054;
-    --color-gray-800: #1d2939;
-    --color-gray-900: #101828;
-    --color-black: #101828;
-    --color-white: #ffffff;
+    /* -------------------------------------- */
+    /* Core User Palette */
+    /* -------------------------------------- */
+    --color-primary: #e6195d;
+    --color-background-light: #f8f6f6;
+    --color-background-dark: #211116;
+    --color-dusty-rose: #b5838d;
+    --color-dusty-dark: #88636f;
+    --color-pale-rose: #fdf2f4;
+    --color-warm-brown: #181113;
+    --color-gold-shimmer: #F3E5AB;
+    --color-gold-accent: #D4AF37;
+    --color-whatsapp: #25D366;
+    --color-whatsapp-dark: #128C7E;
+
+    /* -------------------------------------- */
+    /* Spacing & Typography (Preserved) */
+    /* -------------------------------------- */
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-md: 28rem;
@@ -109,19 +111,70 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
     --text-theme-sm--line-height: 20px;
     --text-theme-xs: 12px;
     --text-theme-xs--line-height: 18px;
-    --color-brand-50: #ecf3ff;
-    --color-brand-100: #dde9ff;
-    --color-brand-300: #9cb9ff;
-    --color-brand-400: #7592ff;
-    --color-brand-500: #465fff;
-    --color-brand-600: #3641f5;
-    --color-brand-800: #252dae;
-    --color-brand-950: #161950;
+
+    /* -------------------------------------- */
+    /* Color Scales (Harmonized) */
+    /* -------------------------------------- */
+    
+    /* BRAND: Primary (#e6195d) */
+    --color-brand-50: #fdf2f4;
+    --color-brand-100: #fce7ec;
+    --color-brand-300: #f08dae;
+    --color-brand-400: #ea487d;
+    --color-brand-500: #e6195d;
+    --color-brand-600: #cf1754;
+    --color-brand-800: #8a0f38;
+    --color-brand-950: #45081c;
+
+    /* GRAY: Warm Rose/Brown (#f8f6f6 -> #211116) */
+    --color-gray-50: #f8f6f6;
+    --color-gray-100: #f3efef;
+    --color-gray-200: #e6dfe0;
+    --color-gray-300: #d4c2c4;
+    --color-gray-400: #bfa1a5;
+    --color-gray-500: #a88389;
+    --color-gray-600: #8c676d;
+    --color-gray-700: #6b4d52;
+    --color-gray-800: #4a3337;
+    --color-gray-900: #211116;
+    --color-gray-dark: #211116;
+
+    /* SUCCESS: Whatsapp (#25D366) */
+    --color-success-50: #effff5; /* Very light mint */
+    --color-success-300: #6ce9a6;
+    --color-success-500: #25D366;
+    --color-success-600: #1eb354;
+    --color-success-700: #188f43;
+    --color-success-800: #0f5c2b;
+
+    /* WARNING: Gold (#D4AF37) */
+    --color-warning-50: #fffdf5; /* Warm cream */
+    --color-warning-400: #e6c250;
+    --color-warning-500: #D4AF37;
+    --color-warning-600: #b08d2b;
+    --color-warning-700: #8c7022;
+
+    /* ERROR: Harmonized Red */
+    --color-error-50: #fff0f2;
+    --color-error-300: #ff99ac;
+    --color-error-500: #f04438;
+    --color-error-600: #d92d20;
+    --color-error-700: #b42318;
+    --color-error-800: #912018;
+
+    /* Misc overrides for consistency */
+    --color-black: #101828;
+    --color-white: #ffffff;
+    --color-orange-50: #fff6ed; /* Keep as warm highlight */
+    --color-orange-400: #fd853a;
+    --color-orange-500: #fb6514;
+    --color-blue-500: oklch(0.623 0.214 259.815);
+    
     --color-blue-light-50: #f0f9ff;
     --color-blue-light-500: #0ba5ec;
-    --color-gray-dark: #1a2231;
-    --color-success-50: #ecfdf3;
-    --color-success-300: #6ce9a6;
+    
+    --color-theme-pink-500: #ee46bc;
+    --color-theme-purple-500: #7a5af8;
     --color-success-500: #12b76a;
     --color-success-600: #039855;
     --color-success-700: #027a48;
@@ -1326,7 +1379,7 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
     border-color: var(--color-blue-light-500);
   }
   .border-brand-500 {
-    border-color: var(--color-warning-500);
+    border-color: var(--color-brand-500);
   }
   .border-error-300 {
     border-color: var(--color-error-300);
@@ -1423,29 +1476,29 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
     }
   }
   .menu-item-active {
-    background-color: var(--color-warning-50);
-    color: var(--color-warning-500);
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-500);
     &:is(.dark *) {
-      background-color: color-mix(in oklab, var(--color-warning-500) 12%, transparent);
+      background-color: color-mix(in oklab, var(--color-brand-500) 12%, transparent);
     }
     &:is(.dark *) {
-      color: var(--color-warning-400);
+      color: var(--color-brand-400);
     }
   }
   .menu-dropdown-badge-inactive {
-    background-color: var(--color-warning-50);
+    background-color: var(--color-brand-50);
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         background-color: var(--color-brand-100);
       }
     }
     &:is(.dark *) {
-      background-color: color-mix(in oklab, var(--color-warning-500) 15%, transparent);
+      background-color: color-mix(in oklab, var(--color-brand-500) 15%, transparent);
     }
     &:is(.dark *) {
       &:is(:where(.group):hover *) {
         @media (hover: hover) {
-          background-color: color-mix(in oklab, var(--color-warning-500) 20%, transparent);
+          background-color: color-mix(in oklab, var(--color-brand-500) 20%, transparent);
         }
       }
     }
@@ -1453,7 +1506,7 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
   .menu-dropdown-badge-active {
     background-color: var(--color-brand-100);
     &:is(.dark *) {
-      background-color: color-mix(in oklab, var(--color-warning-500) 20%, transparent);
+      background-color: color-mix(in oklab, var(--color-brand-500) 20%, transparent);
     }
   }
   .bg-blue-500\/\[0\.08\] {
@@ -1466,10 +1519,10 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
     background-color: var(--color-blue-light-500);
   }
   .bg-brand-50 {
-    background-color: var(--color-warning-50);
+    background-color: var(--color-brand-50);
   }
   .bg-brand-500 {
-    background-color: var(--color-warning-500);
+    background-color: var(--color-brand-500);
   }
   .bg-brand-950 {
     background-color: var(--color-brand-950);
@@ -1571,9 +1624,9 @@ svg{-ms-touch-action:none;touch-action:none}image,text,.jvm-zoomin,.jvm-zoomout{
     }
   }
   .menu-item-icon-active {
-    fill: var(--color-warning-500);
+    fill: var(--color-brand-500);
     &:is(.dark *) {
-      fill: var(--color-warning-400);
+      fill: var(--color-brand-400);
     }
   }
   .fill-current {

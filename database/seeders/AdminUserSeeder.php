@@ -10,14 +10,14 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        // نستخدم firstOrCreate لمنع تكرار الأدمن إذا تم تشغيل السيدر مرتين
+       
         User::firstOrCreate(
-            ['email' => 'admin@sweet.com'], // نبحث عنه بهذا الإيميل
+            ['email' => 'admin@sweet.com'], 
             [
                 'name' => 'Admin User',
-                'password' => Hash::make('password'), // يفضل استخدام Hash::make
+                'password' => Hash::make('password'), 
                 'role' => 'admin',
-                'email_verified_at' => now(), // تفعيل الإيميل مباشرة
+                'email_verified_at' => now(),
             ]
         );
     }

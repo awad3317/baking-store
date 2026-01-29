@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable()->comment('Main Thumbnail');
             $table->decimal('price', 10, 2);
             $table->decimal('sale_price', 10, 2)->nullable();
+            $table->foreignId('currency_id')->nullable()->constrained('currencies')->nullOnDelete();
             $table->integer('stock')->default(0);
             $table->timestamps();
         });
