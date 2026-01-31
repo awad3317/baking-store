@@ -1,29 +1,29 @@
 <header x-data="{ mobileMenuOpen: false }" @click.outside="mobileMenuOpen = false"
     class="sticky top-0 z-40 w-full border-b border-[#f0ebed] bg-white/95 px-6 py-4 backdrop-blur-md dark:bg-[#1a0f12]/95 dark:border-[#3a2d32]">
-    <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <div class="flex justify-between items-center mx-auto max-w-7xl">
         {{-- Logo --}}
-        <div class="flex items-center gap-3 text-warm-brown dark:text-white">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+        <div class="flex gap-3 items-center text-warm-brown dark:text-white">
+            <div class="flex justify-center items-center w-10 h-10 rounded-xl bg-primary/10 text-primary">
                 <span class="material-symbols-outlined">bakery_dining</span>
             </div>
             <h1 class="text-xl font-bold tracking-tight">سويت سبلايز</h1>
         </div>
 
         {{-- Navigation --}}
-        <nav class="hidden items-center gap-8 md:flex">
+        <nav class="hidden gap-8 items-center md:flex">
             <a class="text-sm font-medium {{ request()->routeIs('home') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-dusty-rose transition-colors' }} dark:text-gray-200"
                 href="{{ route('home') }}">الرئيسية</a>
             <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
                 href="{{ route('shop') }}">المتجر</a>
             <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
-                href="{{ route('recipes') }}">الوصفات</a>
+                href="{{ route('recipes.index') }}">الوصفات</a>
 
             <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
                 href="{{ route('contact') }}">تواصل معنا</a>
         </nav>
 
         {{-- Actions --}}
-        <div class="flex items-center gap-4">
+        <div class="flex gap-4 items-center">
 
 
             {{-- Mobile Menu Button --}}
@@ -47,7 +47,7 @@
         <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
             href="{{ route('shop') }}">المتجر</a>
         <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
-            href="{{ route('recipes') }}">الوصفات</a>
+            href="{{ route('recipes.index') }}">الوصفات</a>
         <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
             href="{{ route('contact') }}">تواصل معنا</a>
     </div>
