@@ -16,7 +16,7 @@
             <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
                 href="{{ route('shop') }}">المتجر</a>
             <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
-                href="{{ route('recipes.index') }}">الوصفات</a>
+                href="{{ route('recipes') }}">الوصفات</a>
 
             <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
                 href="{{ route('contact') }}">تواصل معنا</a>
@@ -47,7 +47,7 @@
         <a class="text-sm font-medium {{ request()->routeIs('shop') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
             href="{{ route('shop') }}">المتجر</a>
         <a class="text-sm font-medium {{ request()->routeIs('recipes') ? 'text-dusty-rose font-bold' : 'text-warm-brown' }} hover:text-primary dark:text-gray-200"
-            href="{{ route('recipes.index') }}">الوصفات</a>
+            href="{{ route('recipes') }}">الوصفات</a>
         <a class="text-sm font-medium {{ request()->routeIs('contact') ? 'text-dusty-rose font-bold' : 'text-warm-brown hover:text-primary' }} dark:text-gray-200"
             href="{{ route('contact') }}">تواصل معنا</a>
     </div>

@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,  // 4. التصنيفات
             ProductSeeder::class,   // 5. المنتجات (تعتمد على ما سبق)
             RecipeSeeder::class,
+            TestimonialSeeder::class,
         ]);
        
 

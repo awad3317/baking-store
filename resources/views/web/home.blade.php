@@ -140,32 +140,7 @@
                 <h2 class="mt-2 text-2xl font-bold text-warm-brown dark:text-white">ماذا يقول عملاؤنا</h2>
             </div>
             <div class="grid gap-6 md:grid-cols-3">
-                @foreach ([
-            [
-                'stars' => 5,
-                'text' => '"أفضل متجر لمستلزمات الحلويات! الجودة ممتازة والتوصيل سريع جداً. القوالب ساعدتني كثيراً في مشروعي الخاص."',
-                'initial' => 'س',
-                'name' => 'سارة الأحمد',
-                'role' => 'صانعة كيك',
-                'color' => 'dusty-rose',
-            ],
-            [
-                'stars' => 4.5,
-                'text' => '"الشكولاتة البلجيكية طعمها لا يقاوم، وتغليف المنتجات رائع ويحافظ عليها. شكراً لكم على هذا الاهتمام بالتفاصيل."',
-                'initial' => 'خ',
-                'name' => 'خالد محمد',
-                'role' => 'شيف حلويات',
-                'color' => 'primary',
-            ],
-            [
-                'stars' => 5,
-                'text' => '"تعامل راقي وخدمة عملاء متميزة. المنتجات نادرة وما ألقاها في أي مكان ثاني بنفس الجودة والسعر."',
-                'initial' => 'م',
-                'name' => 'مريم العلي',
-                'role' => 'هاوية طبخ',
-                'color' => 'warm-brown',
-            ],
-        ] as $testimonial)
+        @foreach ($testimonials as $testimonial)
                     <div
                         class="relative overflow-hidden rounded-xl bg-white p-8 shadow-md transition-all hover:-translate-y-1 hover:shadow-lg dark:bg-[#2f1f24]">
                         <span
@@ -189,7 +164,7 @@
                             <div class="flex items-center gap-3">
                                 <div
                                     class="h-10 w-10 rounded-full bg-{{ $testimonial['color'] }}/20 flex items-center justify-center text-{{ $testimonial['color'] }} font-bold">
-                                    {{ $testimonial['initial'] }}</div>
+                                    {{ $testimonial->getInitialAttribute() }}</div>
                                 <div>
                                     <p class="text-sm font-bold text-warm-brown dark:text-white">{{ $testimonial['name'] }}
                                     </p>

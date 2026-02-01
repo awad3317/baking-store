@@ -42,11 +42,11 @@
                 <ul class="flex flex-col gap-4 mb-6">
                     <!-- Menu Item Dashboard -->
                     <li>
-                        <a href="{{ route('dashboard') }}" class="menu-item group" :class="window.location.href.includes('{{ route('dashboard') }}') ?
-                                'menu-item-active' : 'menu-item-inactive'">
-                            <svg :class="window.location.href.includes('{{ route('dashboard') }}') ?
-                                'menu-item-icon-active' : 'menu-item-icon-inactive'" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="{{ route('dashboard') }}"
+                            class="menu-item group {{ request()->routeIs('dashboard') ? 'menu-item-active' : 'menu-item-inactive' }}">
+                            <svg class="{{ request()->routeIs('dashboard') ? 'menu-item-icon-active' : 'menu-item-icon-inactive' }}"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V8.99998C3.25 10.2426 4.25736 11.25 5.5 11.25H9C10.2426 11.25 11.25 10.2426 11.25 8.99998V5.5C11.25 4.25736 10.2426 3.25 9 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H9C9.41421 4.75 9.75 5.08579 9.75 5.5V8.99998C9.75 9.41419 9.41421 9.74998 9 9.74998H5.5C5.08579 9.74998 4.75 9.41419 4.75 8.99998V5.5ZM5.5 12.75C4.25736 12.75 3.25 13.7574 3.25 15V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H9C10.2426 20.75 11.25 19.7427 11.25 18.5V15C11.25 13.7574 10.2426 12.75 9 12.75H5.5ZM4.75 15C4.75 14.5858 5.08579 14.25 5.5 14.25H9C9.41421 14.25 9.75 14.5858 9.75 15V18.5C9.75 18.9142 9.41421 19.25 9 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V15ZM12.75 5.5C12.75 4.25736 13.7574 3.25 15 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V8.99998C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 8.99998V5.5ZM15 4.75C14.5858 4.75 14.25 5.08579 14.25 5.5V8.99998C14.25 9.41419 14.5858 9.74998 15 9.74998H18.5C18.9142 9.74998 19.25 9.41419 19.25 8.99998V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H15ZM15 12.75C13.7574 12.75 12.75 13.7574 12.75 15V18.5C12.75 19.7426 13.7574 20.75 15 20.75H18.5C19.7426 20.75 20.75 19.7427 20.75 18.5V15C20.75 13.7574 19.7426 12.75 18.5 12.75H15ZM14.25 15C14.25 14.5858 14.5858 14.25 15 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15C14.5858 19.25 14.25 18.9142 14.25 18.5V15Z"
                                     fill="" />
@@ -76,11 +76,11 @@
 
                     <!-- Menu Item users -->
                     <li>
-                        <a href="{{ route('products.index') }}"
+                        <a href="{{ route('dashboard.products.index') }}"
                             @click="selected = (selected === 'products' ? '':'products')" class="menu-item group"
-                            :class="window.location.href.includes('{{ route('products.index') }}') ? 'menu-item-active' :
+                            :class="window.location.href.includes('{{ route('dashboard.products.index') }}') ? 'menu-item-active' :
                                 'menu-item-inactive'">
-                            <svg :class="window.location.href.includes('{{ route('products.index') }}') ? 'menu-item-icon-active' :
+                            <svg :class="window.location.href.includes('{{ route('dashboard.products.index') }}') ? 'menu-item-icon-active' :
                                 'menu-item-icon-inactive'" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -95,10 +95,10 @@
 
                     <!-- Menu Item recipes -->
                     <li>
-                        <a href="{{ route('recipes.index') }}"
-                            @click="selected = (selected === 'recipes' ? '':'recipes')" class="menu-item group" :class="window.location.href.includes('{{ route('recipes.index') }}') ? 'menu-item-active' :
+                        <a href="{{ route('dashboard.recipes.index') }}"
+                            @click="selected = (selected === 'recipes' ? '':'recipes')" class="menu-item group" :class="window.location.href.includes('{{ route('dashboard.recipes.index') }}') ? 'menu-item-active' :
                                 'menu-item-inactive'">
-                            <svg :class="window.location.href.includes('{{ route('recipes.index') }}') ? 'menu-item-icon-active' :
+                            <svg :class="window.location.href.includes('{{ route('dashboard.recipes.index') }}') ? 'menu-item-icon-active' :
                                 'menu-item-icon-inactive'" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -107,6 +107,25 @@
                             </svg>
                             <span class="menu-item-text" :class="sidebarToggle ? 'lg:hidden' : ''">
                                 ادارة الوصفات
+                            </span>
+                        </a>
+                    </li>
+
+                    <!-- Menu Item testimonials -->
+                    <li>
+                        <a href="{{ route('dashboard.testimonials.index') }}"
+                            @click="selected = (selected === 'testimonials' ? '':'testimonials')"
+                            class="menu-item group" :class="window.location.href.includes('{{ route('dashboard.testimonials.index') }}') ? 'menu-item-active' :
+                            'menu-item-inactive'">
+                            <svg :class="window.location.href.includes('{{ route('dashboard.testimonials.index') }}') ? 'menu-item-icon-active' :
+                                'menu-item-icon-inactive'" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                                    stroke="currentColor" />
+                            </svg>
+                            <span class="menu-item-text" :class="sidebarToggle ? 'lg:hidden' : ''">
+                                الآراء والتقييمات
                             </span>
                         </a>
                     </li>

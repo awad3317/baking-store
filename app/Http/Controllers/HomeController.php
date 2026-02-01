@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Recipe;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +28,8 @@ class HomeController extends Controller
         // 3. Latest Products (Limit 8)
         $products = Product::with(['category', 'currency'])->latest()->take(5)->get();
 
-        return view('web.home', compact('featuredRecipe', 'categories', 'products'));
+        $testimonials = Testimonial::where('active', true)->latest()->take(3)->get();
+
+        return view('web.home', compact('featuredRecipe', 'categories', 'products', 'testimonials'));
     }
 }
