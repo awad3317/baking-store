@@ -1,10 +1,10 @@
 @extends('dashboard.layouts.app')
 @section('title', 'الآراء والتقييمات')
 @section('Breadcrumb', 'الآراء والتقييمات')
-
 @section('addButton')
+    {{-- Modern Add Button with Modal Trigger --}}
     <button @click="$dispatch('open-modal', 'createTestimonialModal')"
-        class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-brand-500 rounded-xl shadow-sm hover:bg-brand-600 hover:shadow-md focus:ring-2 focus:ring-brand-500/50 transition-all active:scale-[0.98]">
+        class="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-brand-500 rounded-xl shadow-sm hover:bg-brand-600 hover:shadow-md focus:ring-2 focus:ring-brand-500/50 transition-all active:scale-[0.98]">
         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
         </svg>
@@ -14,47 +14,35 @@
 
 @section('content')
     <div
-        class="overflow-hidden bg-white rounded-2xl border shadow-sm border-gray-200/60 dark:bg-gray-900 dark:border-gray-800">
-        <div class="overflow-x-auto custom-scrollbar">
-            <table class="w-full text-sm border-collapse" dir="rtl">
-                <thead
-                    class="text-gray-500 bg-gray-50 border-b border-gray-100 dark:bg-gray-800/50 dark:text-gray-400 dark:border-gray-800">
+        class="overflow-hidden bg-white rounded-xl border shadow-sm border-gray-200/60 dark:bg-gray-900 dark:border-gray-800">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-right">
+                <thead class="text-gray-600 bg-gray-50 dark:bg-gray-800/50 dark:text-gray-400">
                     <tr>
-                        <th class="px-5 py-4 text-xs font-medium text-right">العميل</th>
-                        <th class="px-5 py-4 text-xs font-medium text-right">الدور الوظيفي</th>
-                        <th class="px-5 py-4 text-xs font-medium text-center">التقييم</th>
-                        <th class="px-5 py-4 text-xs font-medium text-center">الحالة</th>
-                        <th class="px-5 py-4 text-xs font-medium text-center">الإجراءات</th>
+                        <th class="px-5 py-4 font-medium">الاسم</th>
+                        <th class="px-5 py-4 font-medium">الدور</th>
+                        <th class="px-5 py-4 font-medium">التقييم</th>
+                        <th class="px-5 py-4 font-medium">الحالة</th>
+                        <th class="px-5 py-4 font-medium">الإجراءات</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
                     @foreach ($testimonials as $testimonial)
                         <tr class="transition-colors hover:bg-gray-50/50 dark:hover:bg-gray-800/30">
-                            {{-- Name with Avatar --}}
-                            <td class="px-5 py-4 text-right">
+                            <td class="px-5 py-4">
                                 <div class="flex gap-3 items-center">
                                     <div
-                                        class="flex flex-shrink-0 justify-center items-center w-10 h-10 text-sm font-semibold rounded-full ring-2 ring-white shadow-sm dark:ring-gray-800 bg-brand-500/10 text-brand-500">
+                                        class="flex flex-shrink-0 justify-center items-center w-10 h-10 text-sm font-semibold rounded-full ring-2 bg-brand-500/10 text-brand-500 ring-brand-500/20">
                                         {{ $testimonial->initial }}
                                     </div>
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="font-medium text-gray-900 dark:text-white">{{ $testimonial->name }}</span>
-                                        <span
-                                            class="text-xs text-gray-400 dark:text-gray-500">#{{ $testimonial->id }}</span>
-                                    </div>
+                                    <span
+                                        class="font-medium text-gray-900 dark:text-gray-100">{{ $testimonial->name }}</span>
                                 </div>
                             </td>
-
-                            {{-- Role --}}
-                            <td class="px-5 py-4 text-right text-gray-600 dark:text-gray-400">
-                                {{ $testimonial->role }}
-                            </td>
-
-                            {{-- Rating Stars --}}
-                            <td class="px-5 py-4 text-center">
+                            <td class="px-5 py-4 text-gray-600 dark:text-gray-400">{{ $testimonial->role }}</td>
+                            <td class="px-5 py-4">
                                 <div
-                                    class="inline-flex gap-1.5 items-center px-2.5 py-1 rounded-lg bg-  -50 text-warning-600 dark:bg-warning-400/10 dark:text-warning-400">
+                                    class="inline-flex gap-1.5 items-center px-2.5 py-1 text-yellow-600 bg-yellow-50 rounded-lg dark:bg-yellow-400/10 dark:text-yellow-400">
                                     <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                                         <path
                                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -62,28 +50,24 @@
                                     <span class="text-sm font-semibold">{{ $testimonial->stars }}</span>
                                 </div>
                             </td>
-
-                            {{-- Status --}}
-                            <td class="px-5 py-4 text-center">
+                            <td class="px-5 py-4">
                                 @if ($testimonial->active)
                                     <span
-                                        class="inline-flex gap-1.5 items-center px-2.5 py-1 text-xs font-medium rounded-lg text-success-600 bg-success-50 dark:bg-success-400/10 dark:text-success-400">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-success-500"></span>
+                                        class="inline-flex gap-1.5 items-center px-2.5 py-1 text-xs font-medium text-green-600 bg-green-50 rounded-lg dark:bg-green-400/10 dark:text-green-400">
+                                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
                                         نشط
                                     </span>
                                 @else
                                     <span
-                                        class="inline-flex gap-1.5 items-center px-2.5 py-1 text-xs font-medium rounded-lg text-error-600 bg-error-50 dark:bg-error-400/10 dark:text-error-400">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-error-500"></span>
-                                        مخفي
+                                        class="inline-flex gap-1.5 items-center px-2.5 py-1 text-xs font-medium text-red-600 bg-red-50 rounded-lg dark:bg-red-400/10 dark:text-red-400">
+                                        <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                                        غير نشط
                                     </span>
                                 @endif
                             </td>
-
-                            {{-- Actions --}}
-                            <td class="px-5 py-4 text-center">
-                                <div class="flex gap-1 justify-center">
-                                    {{-- Edit Button - Opens Modal --}}
+                            <td class="px-5 py-4">
+                                <div class="flex gap-1 items-center">
+                                    {{-- Edit Button --}}
                                     <button @click="$dispatch('open-modal', 'editTestimonialModal{{ $testimonial->id }}')"
                                         class="p-2 text-gray-500 rounded-lg transition-all hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-500/10"
                                         title="تعديل">
@@ -129,7 +113,7 @@
 
         {{-- Pagination --}}
         @if ($testimonials->hasPages())
-            <div class="px-5 py-4 border-t border-gray-100 bg-gray-50/30 dark:border-gray-800 dark:bg-transparent">
+            <div class="px-5 py-4 border-t border-gray-100 dark:border-gray-800">
                 {{ $testimonials->links() }}
             </div>
         @endif
