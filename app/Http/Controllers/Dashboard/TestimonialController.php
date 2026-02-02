@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Classes\WebResponseClass;
 
 class TestimonialController extends Controller
 {
@@ -41,8 +42,7 @@ class TestimonialController extends Controller
         ]);
 
         Testimonial::create($request->all());
-
-        return redirect()->route('dashboard.testimonials.index')->with('success', 'تم إضافة التقييم بنجاح');
+        return WebResponseClass::sendResponse('تم إضافة التقييم بنجاح','تم إضافة التقييم بنجاح','حسناً','dashboard.testimonials.index');
     }
 
     /**
@@ -58,8 +58,7 @@ class TestimonialController extends Controller
      */
     public function edit(string $id)
     {
-        $testimonial = Testimonial::findOrFail($id);
-        return view('dashboard.pages.testimonials.edit', compact('testimonial'));
+        //
     }
 
     /**
@@ -83,8 +82,7 @@ class TestimonialController extends Controller
         $data['active'] = $request->has('active');
 
         $testimonial->update($data);
-
-        return redirect()->route('dashboard.testimonials.index')->with('success', 'تم تحديث التقييم بنجاح');
+        return WebResponseClass::sendResponse('تم تحديث التقييم بنجاح','تم تحديث التقييم بنجاح','حسناً','dashboard.testimonials.index');
     }
 
     /**
@@ -92,8 +90,8 @@ class TestimonialController extends Controller
      */
     public function destroy(string $id)
     {
-        $testimonial = \App\Models\Testimonial::findOrFail($id);
+        $testimonial = Testimonial::findOrFail($id);
         $testimonial->delete();
-        return redirect()->route('dashboard.testimonials.index')->with('success', 'تم حذف التقييم بنجاح');
+        return WebResponseClass::sendResponse('تم حذف التقييم بنجاح','تم حذف التقييم بنجاح','حسناً','dashboard.testimonials.index');
     }
 }
