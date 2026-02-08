@@ -37,6 +37,7 @@
 
     <main class="mx-auto max-w-4xl px-6 py-12">
         <div class="space-y-8">
+            
             <div
                 class="bg-white dark:bg-[#2a1d21] p-8 md:p-10 rounded-2xl shadow-sm border border-stone-100 dark:border-[#3a2d32]">
                 <div class="flex items-center gap-3 mb-6">
@@ -50,7 +51,7 @@
                 </p>
             </div>
 
-            <div
+            {{-- <div
                 class="bg-white dark:bg-[#2a1d21] p-8 md:p-10 rounded-2xl shadow-sm border border-stone-100 dark:border-[#3a2d32]">
                 <div class="flex items-center gap-3 mb-6">
                     <span class="material-symbols-outlined text-primary text-2xl">account_circle</span>
@@ -64,7 +65,7 @@
                         <li>يحق للمتجر تعليق أو إغلاق أي حساب في حال الاشتباه في مخالفة هذه الشروط.</li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
 
             <div
                 class="bg-white dark:bg-[#2a1d21] p-8 md:p-10 rounded-2xl shadow-sm border border-stone-100 dark:border-[#3a2d32]">

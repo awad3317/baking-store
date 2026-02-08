@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\termController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\RecipeController;
 use App\Http\Controllers\Dashboard\ProductController;
@@ -40,7 +41,7 @@ Route::group([], function () {
     })->name('contact');
     
     Route::view('/policy', 'web.return-policy')->name('policy');
-    Route::view('/terms', 'web.terms')->name('terms');
+    Route::get('/terms', [termController::class, 'index'])->name('terms');
 
     // السلة (متاحة للجميع عادة)
     // Route::get('/cart', function () {

@@ -28,11 +28,11 @@
         ></div>
         
         {{-- Favorite Button (shows on hover) --}}
-        <div class="absolute top-3 right-3 rounded-full bg-white px-2 py-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+        {{-- <div class="absolute top-3 right-3 rounded-full bg-white px-2 py-1 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
             <button class="flex items-center justify-center text-gray-400 hover:text-red-500 transition-colors">
                 <span class="material-symbols-outlined text-[20px]">favorite</span>
             </button>
-        </div>
+        </div> --}}
         
         {{-- Discount/Custom Badge --}}
         @if($badge && !$isSoldOut)

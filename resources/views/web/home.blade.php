@@ -123,13 +123,14 @@
                                 <span>{{ $featuredRecipe->difficulty_label }}</span>
                             </div>
                             <button
-                                class="mr-auto rounded-lg bg-warm-brown px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-primary">عرض
-                                الوصفة</button>
+                                class="mr-auto rounded-lg bg-warm-brown px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-primary">
+                                <a href="{{ route('recipe.details') }}?id={{ $featuredRecipe->id }}">عرض الوصفة</a>
+                            </button>
                         </div>
                     </div>
                 </div>
+            @endif
         </div>
-        @endif
     </section>
 
     {{-- Testimonials Section --}}
