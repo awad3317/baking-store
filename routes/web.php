@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\termController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\RecipeController;
+use App\Http\Controllers\RecipeController as WebRecipeController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\TestimonialController;
 
@@ -27,9 +28,7 @@ Route::group([], function () {
     })->name('shop'); 
 
     // قسم الوصفات
-    Route::get('/recipes', function () {
-        return view('web.recipes.index');
-    })->name('recipes');
+    Route::get('/recipes', [WebRecipeController::class, 'index'])->name('recipes');
 
     Route::get('/recipe-details', function () {
         return view('web.recipes.show');

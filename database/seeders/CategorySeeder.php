@@ -11,7 +11,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-           'القوالب', 'الكريمات والحشوات', 'أدوات', 'فن الطعام', 'التغليف'
+           'القوالب', 'الكريمات والحشوات', 'أدوات', 'فن الطعام', 'التغليف','حلويات باردة','معجنات','كيك','تزيين','تارت'
         ];
 
         foreach ($categories as $catName) {

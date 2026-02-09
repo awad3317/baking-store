@@ -21,10 +21,10 @@ return new class extends Migration
             $table->boolean('is_recipe_of_the_week')->default(false);
             $table->string('video_url')->nullable();
             $table->enum('difficulty', ['easy', 'medium', 'hard'])->default('medium');
-            $table->integer('prep_time')->comment('Preparation time in minutes');
+            $table->integer('prep_time');
             $table->integer('servings')->default(1);
             $table->string('chef_name')->nullable();
-            $table->longText('ingredients_text')->comment('Raw ingredients list');
+            $table->longText('ingredients_text');
             $table->timestamps();
         });
     }

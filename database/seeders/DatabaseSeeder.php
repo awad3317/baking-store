@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,   // 5. المنتجات (تعتمد على ما سبق)
             RecipeSeeder::class,
             TestimonialSeeder::class,
-            TermSeeder::class,
+            RecipeStepSeeder::class,
+            // TermSeeder::class,
         ]);
        
 
